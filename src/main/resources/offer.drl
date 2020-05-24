@@ -1,0 +1,26 @@
+package KieRule;
+import org.drool.rule.model.Product;
+
+rule "HDFC"
+
+when
+productOffer : Product(cardType=="HDFC" && shoppingAmount>10000);
+then
+productOffer.setCashBackPercent(10.00);
+end;
+
+rule "ICICI"
+
+when
+productOffer : Product(cardType=="ICICI" && shoppingAmount>15000);
+then
+productOffer.setCashBackPercent(8.00);
+end;
+
+rule "CITI"
+
+when
+productOffer : Product(cardType=="CITI" && shoppingAmount>5000);
+then
+productOffer.setCashBackAmount(500.00);
+end;
