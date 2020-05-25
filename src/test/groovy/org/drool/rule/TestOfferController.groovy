@@ -31,7 +31,7 @@ public class TestOfferController extends Specification {
         product.setName("test");
 
         when:
-        def results = mvc.perform(post("/order")
+        def results = mvc.perform(post("/offer")
                 .contentType("application/json")
                 .content(JsonOutput.toJson(product)));
 
