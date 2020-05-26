@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
 public class OfferController {
 
     @Autowired
     private KieSession session;
 
-    @PostMapping (produces = "application/json", consumes = "application/json", path="/offer")
+    @RequestMapping(produces = "application/json", consumes = "application/json", path="/offer")
     public Product orderProduct(@RequestBody Product product){
         session.insert(product);
         session.fireAllRules();
